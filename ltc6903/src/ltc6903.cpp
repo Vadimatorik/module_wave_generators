@@ -16,12 +16,12 @@ int LTC6903::init (void) {
     arrayOut[0] = outputBuf >> 8;
     arrayOut[1] = outputBuf & 0xFF;
     
-    McHardwareInterfaces::BaseResult r = this->cfg->s->tx(arrayOut, 2, 10);
+    mc_interfaces::res r = this->cfg->s->tx(arrayOut, 2, 10);
     this->cfg->cs->set();
     
     USER_OS_GIVE_MUTEX(this->m);
     
-    if (r == McHardwareInterfaces::BaseResult::ok) {
+    if (r == mc_interfaces::res::ok) {
         return EOK;
     } else {
         return EIO;
@@ -85,12 +85,12 @@ int LTC6903::setFrequency (float frequency,
     arrayOut[1] = outputBuf & 0xFF;
     
     this->cfg->cs->reset();
-    McHardwareInterfaces::BaseResult r = this->cfg->s->tx(arrayOut, 2, 10);
+    mc_interfaces::res r = this->cfg->s->tx(arrayOut, 2, 10);
     this->cfg->cs->set();
     
     USER_OS_GIVE_MUTEX(this->m);
     
-    if (r == McHardwareInterfaces::BaseResult::ok) {
+    if (r == mc_interfaces::res::ok) {
         return EOK;
     } else {
         return EIO;

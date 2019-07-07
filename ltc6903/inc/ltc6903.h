@@ -13,8 +13,8 @@
 namespace WaveGenerators {
 
 struct LTC6903Cfg {
-    McHardwareInterfaces::Pin *const cs;
-    McHardwareInterfaces::SpiMaster8Bit *const s;
+    mc_interfaces::Pin *const cs;
+    mc_interfaces::SpiMaster8Bit *const s;
 };
 
 enum class LTC6903OutputMode {
