@@ -4,8 +4,8 @@
 
 #ifdef MODULE_WAVE_GENERATORS_LTC6903
 
-#include "mc_hardware_interfaces_pin.h"
-#include "mc_hardware_interfaces_spi_master_8bit.h"
+#include "mc_pin.h"
+#include "mc_spi_master_8bit.h"
 #include "user_os.h"
 #include <errno.h>
 #include <math.h>
