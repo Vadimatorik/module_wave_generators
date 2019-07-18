@@ -21,7 +21,7 @@ int LTC6903::init (void) {
     
     USER_OS_GIVE_MUTEX(this->m);
     
-    if (r == mc_interfaces::res::ok) {
+    if (r == mc_interfaces::res::err_ok) {
         return EOK;
     } else {
         return EIO;
@@ -90,7 +90,7 @@ int LTC6903::setFrequency (float frequency,
     
     USER_OS_GIVE_MUTEX(this->m);
     
-    if (r == mc_interfaces::res::ok) {
+    if (r == mc_interfaces::res::err_ok) {
         return EOK;
     } else {
         return EIO;
